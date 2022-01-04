@@ -1,0 +1,25 @@
+{
+  "name": "logseq-plugin-image-uploader",
+  "version": "0.0.1",
+  "main": "dist/index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.1-alpha.33",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "1.1.3",
+    "typescript": "4.5.4",
+    "vite": "2.7.10"
+  },
+  "logseq": {
+    "id": "_jjaychen-logseq-image-uploader",
+    "icon": "./icon.svg"
+  }
+}
