@@ -31,9 +31,12 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.0.2
-      - run: pnpm install
-      - run: pnpm build
-      - run: |
+     
+      - name: Build
+        id: build
+        run: |
+          pnpm install
+          pnpm build
           mkdir ${{ env.PLUGIN_NAME }}
           cp README.md package.json icon.svg ${{ env.PLUGIN_NAME }}
           mv dist ${{ env.PLUGIN_NAME }}
