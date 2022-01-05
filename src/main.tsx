@@ -79,7 +79,6 @@ async function recordUploadedImageFile(filePath: string) {
 }
 
 async function main() {
-  logseq.App.showMsg("Welcome to Logseq Plugins!");
   const graphInfo = await logseq.App.getCurrentGraph();
   const graphPath = graphInfo?.path;
   if (!graphPath) {
