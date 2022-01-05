@@ -16,6 +16,8 @@ Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so ple
 
 Right click any block' dot to show its context menu, and select `Upload image`. All image detected in that block will be uploaded, and replaced with an remote URL.
 
+![example_usage](./example_usage.gif)
+
 ## Note
 
 Since we don't have any permission to operate the file system in a logseq plugin, we can't delete the original file saved by logseq. So we create a page named **"Uploaded image file record(created by logseq-plugin-image-uploader)"** to save all the images we uploaded. You can delete them manually. (One image path actually can appear more than once in that page, for example, you use that image many times, and you upload them more than once)
