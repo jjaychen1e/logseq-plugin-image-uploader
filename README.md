@@ -50,6 +50,4 @@ Currently, logseq plugins are running in a browser-only sandbox, which means we 
 
 First, make sure PicGo is running, and then check [PicGo server](https://picgo.github.io/PicGo-Doc/en/guide/config.html#picgo-server-setting) is configured to run at port `36677`. We'll provide a setting for the plugin in the future. 
 
-If it keeps failing, please fire a [new issue
-
-](https://github.com/JJAYCHEN1e/logseq-plugin-image-uploader/issues/new).
+If it keeps failing, please fire a [new issue](https://github.com/JJAYCHEN1e/logseq-plugin-image-uploader/issues/new).
