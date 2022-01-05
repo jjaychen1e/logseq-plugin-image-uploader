@@ -14,7 +14,7 @@
 
 Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so please open PicGo manually.
 
-Right click any block' dot to show its context menu, and select `Upload image`. All image detected in that block will be uploaded, and replaced with an remote URL.
+Right click any block' dot to show its context menu, and select `Upload image`. All images detected in that block will be uploaded, and replaced with an remote URL.
 
 ![example_usage](./example_usage.gif)
 
