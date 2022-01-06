@@ -4,6 +4,7 @@ import { BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
 async function uploadImage(url: string): Promise<string> {
   return url = await fetch("http://localhost:36677/upload", {
     method: "POST",
+    mode: "no-cors",
     body: JSON.stringify({ list: [url]})
   })
   .then(res => res.json())
