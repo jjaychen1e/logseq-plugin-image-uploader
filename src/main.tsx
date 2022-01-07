@@ -1,10 +1,12 @@
 import "@logseq/libs";
 import { BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
+import { gt } from "semver"
+
+const currentVersion = "0.0.3";
 
 async function uploadImage(url: string): Promise<string> {
-  return url = await fetch("http://localhost:36677/upload", {
+  return await fetch("http://localhost:36677/upload", {
     method: "POST",
-    mode: "no-cors",
     body: JSON.stringify({ list: [url]})
   })
   .then(res => res.json())
@@ -17,7 +19,7 @@ async function uploadImage(url: string): Promise<string> {
   })
   .catch ((error) => {
     console.error('Error:', error);
-    logseq.App.showMsg("Please start PicGo or check its' status!", "error");
+    logseq.App.showMsg("Please check if PicGo is running. And this plugin can only be run in manually loaded mode due to CORS restriction, please download it from GitHub release page.", "error");
   })
 }
 
@@ -79,7 +81,20 @@ async function recordUploadedImageFile(filePath: string) {
   }
 }
 
+async function checkUpdates() {
+  const res = await fetch("https://api.github.com/repos/logseq/logseq-plugin-image-uploader/releases/latest")
+  .then(res => res.json())
+  .then(resJSON => {
+    const latestVersion = resJSON["tag_name"].replace("v", "");
+    if (gt(latestVersion, currentVersion)) {
+      logseq.App.showMsg(`New version ${latestVersion} is available.`, "info");
+    }
+  })
+}
+
 async function main() {
+  checkUpdates();
+  
   const graphInfo = await logseq.App.getCurrentGraph();
   const graphPath = graphInfo?.path;
   if (!graphPath) {

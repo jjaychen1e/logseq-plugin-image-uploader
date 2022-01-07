@@ -11,6 +11,8 @@
 - Navigate to the plugins dashboard: `t` `p`
 - Click the Load unpacked plugin button, then select the sample directory to load it
 
+> Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.
+
 ## How to use it?
 
 Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so please open PicGo manually.
