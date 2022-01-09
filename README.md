@@ -15,7 +15,7 @@
 
 ## Configuration
 
-Currently, we only support turn off auto uploading feature in the configuration file.
+Currently, we only support turning off auto uploading feature in the configuration file.
 
 ```json
 {
