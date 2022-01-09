@@ -27,7 +27,8 @@ export async function checkAndUploadBlock(srcBlock: BlockEntity, graphPath: stri
     let match;
     while ((match = /\!\[.*?\]\((.*?)\)/g.exec(content))) {
         const imageURLText = match[1];
-        if (imageURLText.startsWith("../")) {
+        let uploadNetworkImage = logseq.settings?.uploadNetworkImage ?? false;
+        if (imageURLText.startsWith("../") || uploadNetworkImage) {
             // Ensure this is a local image.
             const imageURLLocal = graphPath + match[1].replace("..", "");
             const imageURLRemote = await uploadImage(imageURLLocal);

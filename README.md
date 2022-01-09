@@ -1,28 +1,11 @@
 # logseq-plugin-image-uploader
 
+<div align="center">
+	<img src="./icon.png" style="width:150px" />
+</div>
+
+
 # Usage
-
-## Installation
-
-- Download the latest [release](https://github.com/JJAYCHEN1e/logseq-plugin-image-uploader/releases) of the plugin.
-- Open Logseq Desktop client and turn on Developer Mode in the user settings panel
-- Open the toolbar dot menus and navigate to the plugins page
-- Read the README file
-- Navigate to the plugins dashboard: `t` `p`
-- Click the Load unpacked plugin button, then select the sample directory to load it
-
-> Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.
-
-## Configuration
-
-Currently, we only support turning off auto uploading feature in the configuration file.
-
-```json
-{
-  "disabled": false,
-  "autoUploading": true
-}
-```
 
 ## How to use it?
 
@@ -41,6 +24,29 @@ Alternatively, if you have inserted any images before, you can right-click any b
 Since we don't have any permission to operate the file system in a logseq plugin, we can't delete the original file saved by logseq. So we create a page named **"Uploaded image file record(created by logseq-plugin-image-uploader)"** to save all the images we uploaded. You can delete them manually. (One image path actually can appear more than once on that page, for example, you use that image many times, and you upload them more than once)
 
 We may provide a script to delete those images in the future.
+
+## Installation
+
+- Download the latest [release](https://github.com/JJAYCHEN1e/logseq-plugin-image-uploader/releases) of the plugin.
+- Open Logseq Desktop client and turn on Developer Mode in the user settings panel
+- Open the toolbar dot menus and navigate to the plugins page
+- Read the README file
+- Navigate to the plugins dashboard: `t` `p`
+- Click the Load unpacked plugin button, then select the sample directory to load it
+
+> Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.
+
+## Configuration
+
+Currently, we only support **turning off auto uploading** feature and **allow uploading network images** feature in the configuration file. Note that at present, only network images using Markdown syntax will be uploaded, although the picture link will also be correctly displayed by Logseq.
+
+```json
+{
+  "disabled": false,
+  "autoUploading": true,
+  "uploadNetworkImage": false,
+}
+```
 
 # Development
 
