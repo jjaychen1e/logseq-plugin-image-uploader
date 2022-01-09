@@ -3,7 +3,9 @@ import { checkUpdates } from "./CheckUpdatesUtils";
 import { checkAndUploadBlock } from "./ImageUploadUtils";
 
 async function main() {
-  checkUpdates();
+  setTimeout(() => {
+    checkUpdates();
+  }, 5000);
 
   const graphInfo = await logseq.App.getCurrentGraph();
   const graphPath = graphInfo?.path;
@@ -38,7 +40,7 @@ async function main() {
               setTimeout(async () => {
                 let isEditing = await logseq.Editor.checkEditing();
                 if (typeof isEditing === "string" && isEditing === uuid) {
-                  // logseq.App.showMsg("Still editing, check it later.", "info");
+                  // logseq.App.showMsg("Still editing, check it later.", "warning");
                   checkLater();
                 } else {
                   // await logseq.Editor.exitEditingMode();

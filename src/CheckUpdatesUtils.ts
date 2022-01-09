@@ -9,7 +9,7 @@ export async function checkUpdates() {
     .then(resJSON => {
       const latestVersion = resJSON["tag_name"].replace("v", "");
       if (gt(latestVersion, currentVersion)) {
-        logseq.App.showMsg(`New version ${latestVersion} is available(logseq-plugin-image-uploader).`, "info");
+        logseq.App.showMsg(`New version ${latestVersion} is available(logseq-plugin-image-uploader).`, "warning");
       }
     })
 }
