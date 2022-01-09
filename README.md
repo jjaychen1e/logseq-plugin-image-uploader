@@ -13,15 +13,30 @@
 
 > Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.
 
+## Configuration
+
+Currently, we only support turn off auto uploading feature in the configuration file.
+
+```json
+{
+  "disabled": false,
+  "autoUploading": true
+}
+```
+
 ## How to use it?
 
 Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so please open PicGo manually.
 
-Right-click any block' dot to show its context menu, and select `Upload image`. All images detected in that block will be uploaded, and replaced with a remote URL.
+By default, when you paste any content into a block, after exit editing that block, the plugin will check whether its content contains any images, if it does, the plugin will upload them and replace them with remote URLs. You can turn off this feature in the configuration file.
+
+![example_usage](./example_usage_auto.gif)
+
+Alternatively, if you have inserted any images before, you can right-click any block' dot to show its context menu, and select `Upload image`. All images detected in that block will be uploaded, and replaced with remote URLs. 
 
 ![example_usage](./example_usage.gif)
 
-## Note
+### Note
 
 Since we don't have any permission to operate the file system in a logseq plugin, we can't delete the original file saved by logseq. So we create a page named **"Uploaded image file record(created by logseq-plugin-image-uploader)"** to save all the images we uploaded. You can delete them manually. (One image path actually can appear more than once on that page, for example, you use that image many times, and you upload them more than once)
 
