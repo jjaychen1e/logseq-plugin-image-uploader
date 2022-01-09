@@ -32,7 +32,7 @@ By default, when you paste any content into a block, after exit editing that blo
 
 ![example_usage](./example_usage_auto.gif)
 
-Alternatively, if you have inserted any images before, you can right-click any block' dot to show its context menu, and select `Upload image`. All images detected in that block will be uploaded, and replaced with remote URLs. 
+Alternatively, if you have inserted any images before, you can right-click any block's dot to show its context menu, and select `Upload image`. All images detected in that block will be uploaded, and replaced with remote URLs. 
 
 ![example_usage](./example_usage.gif)
 
