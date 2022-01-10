@@ -43,16 +43,10 @@ async function main() {
                   // logseq.App.showMsg("Still editing, check it later.", "warning");
                   checkLater();
                 } else {
-                  // await logseq.Editor.exitEditingMode();
-                  // await logseq.Editor.editBlock(uuid);
                   let block = await logseq.Editor.getBlock(uuid);
                   if (block && block.content) {
                     // logseq.App.showMsg(block.content);
                     checkAndUploadBlock(block, graphPath);
-                  } else if (!block) {
-                    // logseq.App.showMsg("Failed to get block.", "error");
-                  } else if (block && !block.content) {
-                    // logseq.App.showMsg("No content found.");
                   }
                 }
               }, 1000);
