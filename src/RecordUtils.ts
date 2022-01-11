@@ -1,7 +1,7 @@
 import { BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
 
 const uploadedImageFileRecordPageName = "Uploaded image file record(created by logseq-plugin-image-uploader)";
-const uploadedImageFileRecordInteractivePageName = "Uploaded image file record Interactive(created by logseq-plugin-image-uploader)";
+const uploadedImageFileRecordInteractivePageName = "Uploaded image file record - interactive(created by logseq-plugin-image-uploader)";
 
 async function getLastBlock(page: PageEntity): Promise<null | BlockEntity> {
   const blocks = await logseq.Editor.getPageBlocksTree(page.name);
