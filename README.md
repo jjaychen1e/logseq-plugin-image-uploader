@@ -21,7 +21,7 @@ Alternatively, if you have inserted any images before, you can right-click any b
 
 ### Note
 
-Since we don't have any permission to operate the file system in a logseq plugin, we can't delete the original file saved by logseq. So we create a page named **"Uploaded image file record(created by logseq-plugin-image-uploader)"** and **"Uploaded image file record - interactive(created by logseq-plugin-image-uploader)"** to save all the images we uploaded. You can delete them manually. (One image path actually can appear more than once on that page, for example, you use that image many times, and you upload them more than once) And we list out all local images in the record page using a query, so you can upload images that already exist.
+Since we don't have any permission to operate the file system in a logseq plugin, we can't delete the original file saved by logseq. So we create pages named **"Uploaded image file record(created by logseq-plugin-image-uploader)"** and **"Uploaded image file record - interactive(created by logseq-plugin-image-uploader)"** to save all the images we uploaded. You can delete them manually. (One image path actually can appear more than once on that page, for example, you use that image many times, and you upload them more than once) And we list out all local images in the record page using a query, so you can upload images that already exist.
 
 We may provide a script to delete those images in the future.
 
