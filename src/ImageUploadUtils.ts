@@ -30,8 +30,9 @@ export async function checkAndUploadBlock(srcBlock: BlockEntity, graphPath: stri
     while ((match = /\!\[.*?\]\((.*?)\)/g.exec(content))) {
         content = content.replace(match[0], "");
         const imageURLText: string = match[1];
-
-        if (match[0].startsWith("![Replaced by Image Uploder]")) {
+        
+        // `Uploder` <= Historical problem... This typo was fixed in v0.0.8.
+        if (match[0].startsWith("![Replaced by Image Uploader]") || match[0].startsWith("![Replaced by Image Uploder]")) {
             continue;
         }
 
@@ -50,7 +51,7 @@ export async function checkAndUploadBlock(srcBlock: BlockEntity, graphPath: stri
                 if (block && block.content) {
                     // This should be executed sequentially to avoid race condition.
                     // TODO: - Maybe we can put this operation into a seperate dispatch queue to improve performance?
-                    await logseq.Editor.updateBlock(block.uuid, block.content.replace(match[0],  `![Replaced by Image Uploder](${imageURLRemote})`));
+                    await logseq.Editor.updateBlock(block.uuid, block.content.replace(match[0],  `![Replaced by Image Uploader](${imageURLRemote})`));
                     await recordUploadedImageFile(match[1]);
                 }
             }
