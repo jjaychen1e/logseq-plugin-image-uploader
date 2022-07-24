@@ -6,7 +6,10 @@ async function uploadImage(url: string): Promise<string> {
         method: "POST",
         body: JSON.stringify({ list: [url] })
     })
-        .then(res => res.json())
+        .then(res =>  {
+            console.log(res.text);
+            return res.json()
+        })
         .then(resJSON => {
             if (resJSON.success) {
                 return resJSON.result[0]
