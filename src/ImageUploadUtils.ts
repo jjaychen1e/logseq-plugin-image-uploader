@@ -18,13 +18,6 @@ async function uploadImage(url: string): Promise<string> {
                 throw new Error("Upload failed.");
             }
         }) 
-        .then(resJSON => {
-            if (resJSON.success) {
-                return resJSON.result[0]
-            } else {
-                throw new Error("Upload failed.");
-            }
-        })
         .catch((error) => {
             console.error('Error:', error);
             logseq.App.showMsg("Error: " + error.message, "error");
