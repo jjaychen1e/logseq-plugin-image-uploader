@@ -6,10 +6,18 @@ async function uploadImage(url: string): Promise<string> {
         method: "POST",
         body: JSON.stringify({ list: [url] })
     })
-        .then(res =>  {
-            console.log(res.text());
-            return res.json()
+        .then((res) => res.text())
+        .then((content) => {
+            console.log(content);
+            return JSON.parse(content);
         })
+        .then((resJSON) => {
+            if (resJSON.success) {
+                return resJSON.result[0];
+            } else {
+                throw new Error("Upload failed.");
+            }
+        }) 
         .then(resJSON => {
             if (resJSON.success) {
                 return resJSON.result[0]
