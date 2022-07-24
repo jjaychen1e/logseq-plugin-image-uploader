@@ -7,7 +7,7 @@ async function uploadImage(url: string): Promise<string> {
         body: JSON.stringify({ list: [url] })
     })
         .then(res =>  {
-            console.log(res.text);
+            console.log(res.text());
             return res.json()
         })
         .then(resJSON => {
