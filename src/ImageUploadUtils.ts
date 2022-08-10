@@ -8,7 +8,7 @@ async function uploadImage(url: string): Promise<string> {
     })
         .then((res) => res.text())
         .then((content) => {
-            console.log(content);
+            console.log("[logseq-plugin-image-uploader]: " + content);
             return JSON.parse(content);
         })
         .then((resJSON) => {
@@ -21,7 +21,7 @@ async function uploadImage(url: string): Promise<string> {
         .catch((error) => {
             console.error('Error:', error);
             logseq.App.showMsg("Error: " + error.message, "error");
-            logseq.App.showMsg("Please check if PicGo is running. And this plugin can only be run in manually loaded mode due to CORS restriction, please download it from GitHub release page.", "error");
+            logseq.App.showMsg("Please check if PicGo is running. Check out more details in the developer tool's console.", "error");
         })
 }
 

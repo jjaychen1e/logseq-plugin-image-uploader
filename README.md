@@ -34,7 +34,8 @@ We may provide a script to delete those images in the future.
 - Navigate to the plugins dashboard: `t` `p`
 - Click the Load unpacked plugin button, then select the sample directory to load it
 
-> Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.
+> ~~Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.~~
+> Now you can install the plugin from the marketplace directly because Logseq now provides an option to run plugin out of the sandbox.
 
 ## Configuration
 
