@@ -37,7 +37,7 @@ We may provide a script to delete those images in the future.
 > ~~Note: You can't use the plugin downloaded from marketplace due to CORS restriction. Please load it manually.~~
 > Now you can install the plugin from the marketplace directly because Logseq now provides an option to run plugin out of the sandbox.
 >
-> If you still counter the CORS issue, you can manually set the `effect` option to `true`, see https://github.com/jjaychen1e/logseq-plugin-image-uploader/issues/10#issuecomment-1445852535 for more details.
+> If you still encounter the CORS issue, you can manually set the `effect` option to `true`, see https://github.com/jjaychen1e/logseq-plugin-image-uploader/issues/10#issuecomment-1445852535 for more details.
 
 ## Configuration
 
