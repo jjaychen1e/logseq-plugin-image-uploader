@@ -9,7 +9,7 @@
 
 ## How to use it?
 
-Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so please open PicGo manually.
+Currently, we only support [PicGo](https://github.com/Molunerfinn/PicGo), so please start PicGo manually.
 
 By default, when you paste any content into a block, after exit editing that block, the plugin will check whether its content contains any images, if it does, the plugin will upload them and replace them with remote URLs. You can turn off this feature in the configuration file.
 
