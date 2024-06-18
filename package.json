@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-image-uploader",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "dist/index.html",
   "scripts": {
     "dev": "vite",
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@logseq/libs": "^0.0.1-alpha.33",
+    "@types/node": "^20.14.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "semver": "^7.3.5"
