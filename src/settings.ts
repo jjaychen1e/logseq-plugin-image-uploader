@@ -16,13 +16,6 @@ const settings: SettingSchemaDesc[] = [
         default: false,
     },
     {
-        key: 'homePath',
-        type: 'string',
-        title: 'User Home Path',
-        description: 'Use Home Path, such as /Users/zhang',
-        default: '',
-    },
-    {
         key: 'skipURLPrefix',
         type: 'string',
         title: 'Skip URL Prefix',

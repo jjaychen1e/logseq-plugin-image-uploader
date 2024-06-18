@@ -45,15 +45,16 @@ async function fetchResponse(url: string): Promise<string> {
 }
 
 async function reUploadImage(url: string, basePath:string): Promise<string> {
+    const storage = logseq.Assets.makeSandboxStorage()
     try {
         const timestamp = Date.now();
         const filename = `${timestamp}${url.substring(url.lastIndexOf('.'))}`
-        const path = `${basePath}/${logseq.FileStorage.ctxId}/${filename}`
-        const response = await fetchResponse(url)
-        await logseq.FileStorage.setItem(filename, response)
-        const newURL = await uploadImage(path)
-        await logseq.FileStorage.removeItem(filename)
-        return newURL
+        const fileContent = await fetchResponse(url)
+        await storage.setItem(filename, fileContent)
+        const localPath = `${basePath}/${logseq.FileStorage.ctxId}/${filename}`
+        const remoteURL =  await uploadImage(localPath)
+        await storage.removeItem(filename)
+        return remoteURL
     } catch (error) {
         console.error('Error:', error);
         logseq.App.showMsg("Error: " + (error as Error).message, "error");
@@ -91,9 +92,9 @@ export async function checkAndUploadBlock(srcBlock: BlockEntity, graphPath: stri
             if (logseq.settings?.skipURLPrefix && imageURL.startsWith(logseq.settings?.skipURLPrefix))  {
                 continue
             }
-            imageURLRemote = await reUploadImage(imageURL,`${logseq.settings?.homePath}/.logseq/storages`);
+            imageURLRemote = await reUploadImage(imageURL,`${graphPath}/assets/storages`);
         } else if (imageURL.startsWith("../") || uploadNetworkImage){
-            const originalURL = imageURL.startsWith("../") ? graphPath + match[1].replace("../", "/") : match[1];
+            const originalURL = imageURL.startsWith("../") ? graphPath + imageURL.replace("../", "/") : imageURL;
             imageURLRemote = await uploadImage(originalURL);
         } else {
             continue
