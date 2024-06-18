@@ -2,6 +2,13 @@ import { SettingSchemaDesc } from '@logseq/libs/dist/LSPlugin';
 
 const settings: SettingSchemaDesc[] = [
     {
+        key: 'autoUploading',
+        type: 'boolean',
+        title: 'auto Uploading',
+        description: 'auto Uploading',
+        default: true,
+    },
+    {
         key: 'uploadNetworkImage',
         type: 'boolean',
         title: 'Upload Image To PicGo Force',
