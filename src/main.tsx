@@ -1,6 +1,7 @@
 import "@logseq/libs";
 import { checkUpdates } from "./CheckUpdatesUtils";
-import { checkAndUploadBlock } from "./ImageUploadUtils";
+import {checkAndUploadBlock} from "./ImageUploadUtils";
+import settings from './settings';
 
 async function getGraphPath() {
   const graphInfo = await logseq.App.getCurrentGraph();
@@ -67,4 +68,4 @@ async function main() {
   });
 }
 
-logseq.ready(main).catch(console.error);
+logseq.useSettingsSchema(settings).ready(main).catch(console.error);
